@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+      <meta charset="utf-8" />
+
+      <title>ePortfolio of Marvin Yormie &mdash; Mortgage and Amortization Calculator</title>
+
+      <!--For versions of Internet Explorer prior to version 9-->
+                  <!--[if lt IE 9]>
+          <script src="dist/html5shiv.js"></script>
+          <![endif]-->
+      <!--For Chrome, Firefox, and other non-IE browsers-->
+      <link rel="stylesheet" type="text/css" href="../Styles/Styles.css">
+
+      <!--For IE 8 browsers-->
+      <!--[if IE 8]>  <link rel="stylesheet" type="text/css" href="../styles/ie8.css" /><![endif]-->
+      <!--For IE 7 browsers-->
+      <!--[if IE 7]>  <link rel="stylesheet" type="text/css" href="../styles/ie7.css"/> <![endif]-->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+      <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+      <!--Responsiveness-->
+      <script src="../JS/modernizr-latest.js"></script>
+
+      <!--Rounded corners-->
+      <script src="../JS/jquery.corner.js" type="text/javascript"></script>
+
+      <style media="print">
+               .noprint * {
+                   display:none;
+               }
+          
+          body {
+             visibility: hidden;
+             margin-top:-851px;
+          }
+          
+          @page {
+            margin: 35px;
+          }
+          
+          .printthis {
+             visibility: visible;
+          }
+      </style>
+
+  </head>
+  <body>
+   <section id="Parent">
+      <section id="Mainwrapper">
+          <section id="mortgageTitle">
+              <h6 style="color: #fff; font-size: 190%; font-weight:bold; padding: inherit;">Mortgage Payment Calculator</h6>
+          </section>
+
+          <section id="wrapper">
+
+              <section id="mortgageContainer">
+
+                  <section id="calcMortgage">
+                      <h6>Calculate Mortgage Payment</h6>
+                      <table style="width:300px; float: left; margin-left:5px; margin-top: 20px;">
+                          <tr>
+                              <td><label>Property Value:</label></td>
+                              <td>
+                                  <div class="dualPropertyText" id="dualPropertyTextPVal">
+                                      <span style="color: #aaabab; font-size: 15px; margin-left: 3px;">$</span>
+                                      <input type="text" name="fixed" value="100000" id="homeVal" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Down Payment:</label></td>
+                              <td>
+                                  <div class="dualPropertyText">
+                                      <select id="downPymnt" style="border:none; height: 27px;">
+                                          <option>10</option>
+                                          <option>15</option>
+                                          <option>20</option>
+                                          <option>25</option>
+                                          <option>30</option>
+                                      </select>
+                                      <span style="color: #aaabab; font-size: 15px; margin-left: 23px;">%</span>
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Loan Term:</label></td>
+                              <td>
+                                  <div class="dualPropertyText">
+                                      <select id="numOfYears" style="border:none; height: 27px;">
+                                          <option>15</option>
+                                          <option>20</option>
+                                          <option>25</option>
+                                          <option>30</option>
+                                      </select>
+                                      <span style="color: #aaabab; font-size: 15px;">years</span>
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Loan Start Date:</label></td>
+                              <td>
+                                  <div class="dualPropertyText" id="dualPropertyTextPVal">
+                                      <input type="text" id="datepickerCalc" readonly="readonly" style="width: 80px;" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Annual Interest Rate:</label></td>
+                              <td>
+                                  <div class="dualPropertyText">
+                                      <input type="text" name="fixed" value="5" id="annualInterestRt" />
+                                      <span style="color: #aaabab; font-size: 15px;">%</span>
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Annual Property Tax:</label></td>
+                              <td>
+                                  <div class="dualPropertyText" id="dualPropertyTx">
+                                      <span style="color: #aaabab; font-size: 15px; margin-left: 3px;">$</span>
+                                      <input type="text" name="fixed" value="2000" id="annualPropertyTx" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Annual Property Insurance:</label></td>
+                              <td>
+                                  <div class="dualPropertyText" id="dualPropertyIns">
+                                      <span style="color: #aaabab; font-size: 15px; margin-left: 3px;">$</span>
+                                      <input type="text" name="fixed" value="850" id="annualPropertyIns" />
+                                  </div>
+                              </td>
+                          </tr>
+
+                          <tr>
+                              <td>
+                                  <div class="dualPropertyTextBtn" style="float: right;">
+                                      <input type="button" value="Reset" id="resetBtn" style="float: right; height: 32px; width: 88px; background-color: #2467a7; color: white; border:0px; margin: 0px;" />
+                                  </div>
+                              </td>
+                              <td>
+                                  <div class="dualPropertyTextBtn">
+                                      <input type="button" value="Submit" id="calculatemortgageBtn" style="height: 32px; width: 88px; background-color: #2467a7; color: white; border:0px;" />
+                                  </div>
+                              </td>
+                          </tr>
+                      </table>
+
+                  </section>
+
+                  <section id="monthlyPymnt">
+                      <h1>Monthly Payment Summary</h1>
+
+                      <table style="width: 305px; margin-left: 0px; margin-top: 20px; margin-right: 5px; float: right;">
+                          <tr>
+                              <td><label>Property pay-off Date:</label></td>
+                              <td><!--value="Dec, Mar, 2044"-->
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="propertyPayOffDate" value="Mar, 2029" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Monthly Payment:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="monthlyPymntVal" value="$ 949.21"/>
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Total Interest Paid:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="monthlyinterestTtl" value="$ 38108.57" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Total Principal Paid:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="monthlyPrincipalTtl" value="$ 90000.00" />
+                                  </div>
+                              </td>
+                              <td><label></label></td>
+                          </tr>
+                          <tr>
+                              <td><label>Total Taxes & Insurance:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="taxAndInsuranceTtl" value="$ 42750.00" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Monthly PMI:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="pmiMonthly" value="$ 90.00" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Total PMI:</label></td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="pmiTotal" value="$ 16200.00" />
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><label>Months</label><label id="numOfmonths" style="margin-left:-16px; margin-right:-16px;">180</label> <label>Total of</label>
+                              </td>
+                              <td>
+                                  <div class="dualPropertyTextMonthly">
+                                      <input type="text" id="totalPymnt" value="$ 170858.57" />
+                                  </div>
+                              </td>
+                          </tr>
+                      </table>
+
+                  </section>
+              </section>
+
+
+
+              <section id="mortgageGraphs">
+
+                  <section id="graphOne">
+                  </section>
+
+                  <section id="graphTwo">
+                  </section>
+
+                  <div class="dualPropertyTextAmortBtn" style="display: inline-block;">
+                      <input id="showAmort" type="button" value="Show/Hide Amortization Table" style="display: inline-block; border:none; font-size: 14px; margin: 0px;" />
+                  </div>
+
+                  <section id="amortTblSect">
+
+                      <table style="width: 682px; margin-left: 0px; border: 0px;">
+                          <tr>
+                              <td>
+                                  <p style="padding: 3px; margin: 5px; float: left; margin-left: 150px;"> Amortization Table</p>
+                              </td>
+
+                              <td>
+                                  <p style="padding: 3px; margin: 5px; float: right; margin-right: 150px;">
+                                      <input type="radio" name="annual" value="annualRb" id="annually" style="width: auto; height: auto;" />Annualy
+                                      <input type="radio" name="annual" value="monthlyRb" id="monthly" style="width: auto; height: auto;" /> Monthly </p>
+                              </td>
+                          </tr>
+
+                      </table>
+
+                      <table class="printthis" id="amortizationTbl" style="width: 680px; color: white;">
+                          <tr style="background-color: #2467a7; border:  1px solid #2467a7;">
+                              <th>Months</th>
+                              <th>Payment</th>
+                              <th>Interest Paid</th>
+                              <th>Principal Paid</th>
+                              <th>Tax & Insurance</th>
+                              <th>Total Interest</th>
+                              <th>Principal Owed</th>
+                          </tr>
+                      </table>
+
+                      <table class="printthis" id="amortizationTblAnnual" style="width: 680px;">
+                          <tr style="background-color: #2467a7; border:  1px solid #2467a7;">
+                              <th>Months</th>
+                              <th>Payment</th>
+                              <th>Interest Paid</th>
+                              <th>Principal Paid</th>
+                              <th>Tax & Insurance</th>
+                              <th>Total Interest</th>
+                              <th>Principal Owed</th>
+                          </tr>
+                      </table>
+                  </section>
+
+                  <section style="text-align: center; display: inline-block;">
+                      <div class="dualPropertyTextPrintBtn" style="display: inline-block; background-color: #f00; width: 170px;">
+                          <input id="printAmort" type="button" value="Print Amortization Data" onclick="window.print()" style="display: inline-block; border: none; font-size: 14px; width: 170px; height: 27px; padding: 0px; margin: 0px;" />
+                      </div>
+                  </section>
+
+              </section>
+          </section>
+      </section>
+
+       <section style="display: inline-block; width: 770px; padding: 25px; text-align: center;">
+
+          <table style="width:865px; margin-left: 17px; display: table; float: left;">
+              <tr>              
+                  <td>
+                     <span><a href="http://www.emarvin.com"><img alt="ePortfolio of Marvin Yormie" src="../images/epf.png" style="width: 30px; height: 25px; margin-top: 0px;" /></a></span>
+                  </td>
+
+                  <td>
+                      <a href="http://www.emarvin.com" style="text-decoration: none; margin-left: -17px; font-weight: bold;"><span style="color:#999966;">ePortfolio </span>  of Marvin <span style="color:#999966;">Yormie</span></a>
+                  </td>
+
+                  <td>
+                    &#169; 2012-2014 Marvin Yormie</p>
+                  </td>
+
+                  <td>
+                     859.985.7597 &#124; yormiem@berea.edu
+                  </td>
+              </tr>
+
+          </table>
+      </section>
+</section>
+      <script src="../JS/Script.js"></script>
+  </body>
+</html>
