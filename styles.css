@@ -1,0 +1,374 @@
+html {
+margin:0;
+padding:0;
+border:0;
+}
+
+body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+margin: 0;
+padding: 0;
+border: 0;
+font: inherit;
+vertical-align: baseline;
+color: #000;
+}
+
+h1, h2, h3, h4, h5, h6{
+color:#2467a7;
+font-size: 120%;
+}
+
+/* Make HTML5 elements behave like DIVs in older browers */
+article, aside, details, figcaption, figure, dialog,
+footer, header, hgroup, menu, nav, section {
+display:block;
+}
+
+
+body {
+line-height: 1.5;
+font-size: 100%;
+}
+
+table {
+border-collapse:collapse;
+border-spacing: 0;
+}
+
+/* float:none prevents the span-x classes from breaking table-cell display */
+caption, th, td {
+text-align: left;
+font-weight: normal;
+float:none !important;
+}
+table, th, td {
+vertical-align: middle;
+}
+
+table, label{
+float:right;
+padding: 10px;
+}
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; }
+blockquote, q { quotes: "" ""; }
+
+a img { border: none; }
+
+
+:focus { outline: 0; }
+
+
+html,body {
+text-align:center;
+background-image:url(../images/background_1.png);
+background-repeat:repeat;
+font-family:arial,sans-serif;
+font-size:85%;
+margin:0;
+padding:0;
+}
+
+
+#mortgageTitle {
+margin: 5px;
+padding: 0px;
+}
+
+
+#Parent{
+width: 808px;
+text-align:center;
+margin-top:0px;
+display:inline-block;
+}
+
+
+#Mainwrapper {
+width: 798px;
+text-align:center;
+margin-top:0px;
+padding-left:5px;
+padding-right:5px;
+padding-bottom:5px;
+display:inline-block;
+background-color: #0a285d;
+}
+
+#wrapper {
+text-align:center;
+padding:22px;
+display:inline-block;
+background-color: #F5F5F5;
+}
+
+#mortgageContainer {
+text-align:center;
+width: 732px;
+margin-bottom: 0px;
+background-color:#FFF;
+display:inline-block;
+padding:9px;
+
+border-left: 1px #ECECEC solid;
+border-top: 1px #ECECEC solid;
+border-right: 1px #ECECEC solid;
+
+box-shadow: 0 4px 6px -2px gray;
+}
+
+#calcMortgage {
+width:355px;
+height:367px;
+background-color:#FFF;
+display:inline-block;
+text-align: center;
+color:#000;
+padding:10px;
+padding-left: 0px;
+float: left;
+}
+
+#calcMortgage label{
+float:right;
+padding-bottom: 10px;
+padding-top: 10px;
+padding-right: -10px;
+}
+
+
+input{
+width: 100px;
+height: 22px;
+border:solid 1px #BBB;
+outline:none;
+padding-left: 4px;
+font-size: 15px;
+}
+
+
+#monthlyPymnt {
+text-align: center;    
+width:344px;
+height:367px;
+background-color: #FFF;
+margin-left:0px;
+padding: 10px;
+display:inline-block;
+color:#000;
+border-left: 1px solid #F5F5F5; 
+float: left;
+}
+
+#monthlyPymnt input{
+width: 100px;
+height: 22px;
+font-size: 17px;
+border:solid 1px #f9fafb;
+background-color: #f9fafb;
+outline:none;
+}
+
+
+#monthlyPymnt label{
+float:right;
+padding-bottom: 10px;
+padding-top: 10px;
+padding-right: -10px;
+}
+
+#mortgageGraphs{
+text-align:center;
+width:  732px;
+background-color:#f9fafb;
+display:inline-block;
+padding:9px;
+margin-top: -6px;
+
+border-left: 1px #ECECEC solid;
+border-right: 1px #ECECEC solid;
+border-bottom: 1px #ECECEC solid;
+
+box-shadow: 0 4px 6px -2px gray;
+}
+
+#graphOne {
+width:415px;
+height:270px;
+background-color:#f9fafb;
+display:inline-block;
+text-align: center;
+color:#000;
+padding:10px;
+padding-left: 0px;
+border-bottom: 1px dashed silver;
+margin-bottom: 10px;
+float: left;
+}
+
+#graphTwo
+{
+text-align: center;    
+width:290px;
+height:270px;
+background-color: #f9fafb;
+text-align: center;
+color:#000;
+margin-left:-3px;
+padding: 10px;
+display:inline-block;
+border-bottom: 1px dashed silver;
+margin-bottom: 10px;
+float: left;
+}
+
+#mortgageGraphs input{
+color: white;  
+text-align: center; 
+width: 200px; 
+height: 35px;
+margin-bottom: 10px;
+background-color: #2467a7;
+}
+
+#amortTblSect{
+width: 682px;
+display: inline-block;
+background-color: #FFF;
+text-align: center;
+padding: 10px;
+padding-top: 3px;
+}
+
+#amortTblSect td{
+padding: 2px;
+text-align: center;
+}
+
+#amortTblSect th{
+padding: 6px;
+padding-left: 0px;
+text-align: center;
+color:  #FFF;
+font-weight: bold;
+}
+
+#amortTblSect table {
+width: 900px;
+border: 1px solid #edf0fd;
+background-color: #FFF;
+}
+
+
+#amortTblSectAnnual{
+width: 682px;
+display: inline-block;
+background-color: #FFF;
+text-align: center;
+padding: 10px;
+padding-top: 3px;
+}
+
+#amortTblSectAnnual td{
+padding: 5px;
+padding-left: 7px;
+text-align: left;
+}
+
+#amortTblSectAnnual table {
+width: 900px;
+border: 1px solid #edf0fd;
+background-color: #FFF;
+}
+
+
+#banner {
+color:#000;
+font-size:25px;
+width:auto;
+height:117px;
+text-align:center;
+clear:left;
+margin:0;
+}
+
+#bannerNonPic {
+color:#606859;
+width:auto;
+font-size:25px;
+background-size:100% 82px;
+background-repeat:no-repeat;
+height:80px;
+clear:left;
+margin:0;
+}
+
+#bannerNonPicWebapps {
+color:#606859;
+border-bottom:solid 1px #969D8F;
+width:auto;
+font-size:25px;
+background-image:url(../images/banner1.png);
+background-size:100% 82px;
+background-repeat:no-repeat;
+height:80px;
+background-color:#606859;
+clear:left;
+margin:0;
+}
+
+#banner table {
+margin-top:19px;
+height:105px;
+display:inline-block;
+margin-right:800px;
+padding:0;
+}
+
+#menuPicHeader section {
+margin-top:-598px;
+margin-left:71px;
+width:120px;
+color:#606859;
+text-align:left;
+line-height:17px;
+font-size:17px;
+padding:0;
+}
+
+#topNavigate {
+width:auto;
+margin-top:0;
+margin-right:0;
+margin-bottom:-1px;
+text-align:center;
+padding:1px;
+}
+
+#navigateSoft {
+width:auto;
+text-align:center;
+margin:-35px 0 0;
+padding:1px;
+}
+
+
+.dualPropertyText {
+border: solid 1px; 
+width: 86px;
+border:solid 1px #BBB;
+}
+
+.dualPropertyText input {
+border: none;   
+height: 22px;
+outline: none;
+width: 61px; 
+}
