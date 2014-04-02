@@ -1,20 +1,4 @@
 (function () {
-   /*months array*/
-   var monthsArr = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-
-   /*Mortgage and amortization global Variables initialized*/
-loanAmonut = 0, firstPymntMonth, firstPymntDay, firstPymntYear, annualInterestRate = 0, totalPMI = 0,
-monthlyPropertyTax = 0, annualPropertyTax = 0, monthlyPropertyInsurance = 0, annualPropertyInsurance = 0, monthlyPMI = 0,
-annualMortgageTerm = 0, monthlyPymnt = 0, monthlyInterest = 0, PMI = 0, monthlyPrincipalPaid = 0, monthlyPrincipalOwed = 0,
-totalMonths = 0, monthlyInterestsTotal = 0, monthlyInterestsTotals = 0, monthlyPrincipalsTotal = 0, taxTotal = 0,
-insuranceTotal = 0, yearOnePrincipalTotal = 0, yearTwoPrincipalTotal = 0, yearThreePrincipalTotal = 0, yearFourPrincipalTotal = 0,
-yearFivePrincipalTotal = 0, yearSixPrincipalTotal = 0, yearOneInterestTotal = 0, yearTwoInterestTotal = 0, yearThreeInterestTotal = 0,
-yearFourInterestTotal = 0, yearFiveInterestTotal = 0, yearSixInterestTotal = 0, yearOneTaxAndInsTotal = 0, yearTwoTaxAndInsTotal = 0,
-yearThreeTaxAndInsTotal = 0, yearFourTaxAndInsTotal = 0, yearFiveTaxAndInsTotal = 0, yearSixTaxAndInsTotal = 0, ii = 0,
-interestTotalPercent = 0, principalTotalPercent = 0, taxAndInsuranceTotalPercent = 0, interestTotalGraphVal = 0, principalTotalGraphVal = 0,
-PrincipalOwedYearlyVal = 0, taxAndInsuranceTotalGraphVal = 0; interestPrincipalTaxAndInsTotal = 0, interestYearlyVal = 0, principalYearlyVal = 0,
-taxAndInsuranceYearlyVal = 0, yearlyInterestsTotals = 0, yearlyPymnt = 0;
-
    $("#datepickerCalc").datepicker({
 
        minDate: 0,
